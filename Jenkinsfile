@@ -73,7 +73,7 @@ pipeline {
     }
 }
 
-// Remember the below syntax for the interview question 
+// Remember the below syntax for the interview question and jenkins file starts with "J" no extension
 
 // pipeline {
 //     agent any
@@ -101,4 +101,10 @@ pipeline {
 //     always {
 //         echo 'i will always say hello again'
 //     }
+    // failure {
+    //     echo 'this will run if failure'
+    // }
+    // success {
+    //     echo 'this will run if success'
+    // }
 // }
