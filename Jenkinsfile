@@ -9,7 +9,7 @@ pipeline {
     }
     options {
         timeout(time: 1, unit: 'HOURS')
-        disableConcurrentBuilds()
+        disableConcurrentBuilds()  // It will prevent from running parallel builds
     }
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
@@ -37,7 +37,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh """
-                    echo  "Here I wrote shell script"
+                    echo  "Here I wrote shell script" 
                     echo "$GREETING"
                     #sleep 10
                 """
@@ -59,7 +59,7 @@ pipeline {
             }
         }
     }
-    // post build
+    // post build we have different conditions in the post you can refer in internet
     post { 
         always { 
             echo 'I will always say Hello again!'
