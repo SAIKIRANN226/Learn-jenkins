@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'AGENT-1'  // Provide the same what you have created in the jenkins
+            label 'AGENT-1'  // Provide the same name what you have created in the jenkins
         }
     }
     environment { 
