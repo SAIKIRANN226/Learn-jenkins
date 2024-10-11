@@ -9,7 +9,7 @@ pipeline {
     }
     options {
         timeout(time: 1, unit: 'HOURS')
-        disableConcurrentBuilds()  // It will prevent from running parallel builds
+        disableConcurrentBuilds()  // It will prevent from running parallel builds.
     }
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
