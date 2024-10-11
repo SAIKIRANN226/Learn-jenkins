@@ -59,7 +59,7 @@ pipeline {
             }
         }
     }
-    // Post build we have lot of different conditions in the post you can refer in internet
+    // Post build we have lot of different conditions in the post you can refer in internet.
     post { 
         always { 
             echo 'I will always say Hello again!'
