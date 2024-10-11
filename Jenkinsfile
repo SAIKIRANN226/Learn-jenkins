@@ -1,10 +1,10 @@
 pipeline {
     agent {
         node {
-            label 'AGENT-1'  // Provide the same name what you have created in the jenkins
+            label 'SAI-agent'  // Provide the same name what you have created in the jenkins
         }
     }
-    environment { 
+    environment {  // We have lot of environments we can select anything as per our requirement as of now we selected Greetings, if you want to know all environments just "env"
         GREETING = 'Hello Jenkins'
     }
     options {
