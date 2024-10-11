@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'AGENT-1'
+            label 'AGENT-1'  // Provide the same what you have created in the jenkins
         }
     }
     environment { 
@@ -72,39 +72,3 @@ pipeline {
         }
     }
 }
-
-// Remember the below syntax for the interview question and jenkins file starts with "J" no extension
-
-// pipeline {
-//     agent any
-
-//     stages {
-//         stage('Build') {
-//             steps {
-//                 echo 'Building..'
-//             }
-//         }
-//         stage('Test') {
-//             steps {
-//                 echo 'Testing..'
-//             }
-//         }
-//         stage('Deploy') {
-//             steps {
-//                 echo 'Deploying....'
-//             }
-//         }
-//     }
-// }
-
-// post {
-//     always {
-//         echo 'i will always say hello again'
-//     }
-    // failure {
-    //     echo 'this will run if failure'
-    // }
-    // success {
-    //     echo 'this will run if success'
-    // }
-// }
