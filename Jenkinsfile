@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'SAI-agent'  // Provide the same name what you have created in the jenkins
+            label 'saikiran-agent'  // Provide the same name what you have created in the jenkins
         }
     }
     environment {  // We have lot of environments we can select anything as per our requirement as of now we selected Greetings, if you want to know all environments just "env"
