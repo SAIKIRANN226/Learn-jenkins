@@ -4,21 +4,21 @@ pipeline {
             label 'saikiran-agent'  // Provide the same name what you have created in the jenkins
         }
     }
-    environment {  // We have lot of environments we can select anything as per our requirement as of now we selected Greetings, if you want to know all environments just "env"
+    environment {  // We have lot of environments we can select anything as per our requirement as of now we selected Greetings, if you want to know all environments just "env" and run it, it will show all available environments in the jenkins console
         GREETING = 'Hello Jenkins'
     }
     options {
         timeout(time: 1, unit: 'HOURS')
-        disableConcurrentBuilds()  // It will prevent from running parallel builds.
+        disableConcurrentBuilds()  // It will prevent from running parallel builds or It wont allow to run two builds at a time
     }
-    parameters {
+    parameters { // Parameters will not shown in the console when you build the job for the first time from the second time it will show then option called "Build with parameters"
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 
         text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
 
         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
 
-        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something') // Generally it is a dropdown we put options like dev,sit,uat,prod
 
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
@@ -39,7 +39,7 @@ pipeline {
                 sh """
                     echo  "Here I wrote shell script" 
                     echo "$GREETING"
-                    #sleep 10
+                    # sleep 10
                 """
             }
         }
@@ -59,7 +59,7 @@ pipeline {
             }
         }
     }
-    // Post build we have lot of different conditions in the post you can refer in internet
+    // In Post build we have different conditions like always,changed,fixed,regression,oborted,failure,success,unstable,unsuccessful,cleanup, we use only few
     post { 
         always { 
             echo 'I will always say Hello again!'
