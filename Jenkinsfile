@@ -8,10 +8,10 @@ pipeline {
         GREETING = 'Hello Jenkins'
     }
     options {
-        timeout(time: 1, unit: 'HOURS')
+        timeout(time: 1, unit: 'HOURS') // This will will run with in hour after that it will timeout so that we can save time for running continously
         disableConcurrentBuilds()  // It will prevent from running parallel builds or It wont allow to run two builds at a time
     }
-    parameters { // Parameters will not shown in the console when you build the job for the first time from the second time it will show then option called "Build with parameters"
+    parameters { // Parameters will not shown in the console when you build the job for the first time from the second time it will show then option called "Build with parameters". Parameters nothing but same as giving argument to the shellscript or ansible or terraform
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 
         text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
